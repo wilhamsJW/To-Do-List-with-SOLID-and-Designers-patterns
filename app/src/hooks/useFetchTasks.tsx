@@ -16,16 +16,9 @@ export function useFetchTasks(loggedUser: any) {
           if (data) {
             const allSelectedTasks = JSON.parse(data);
             const userByAllSelectedTasks = filterByEmail(allSelectedTasks, loggedUser?.email ?? '');
-            console.log('=====================================================>>>>>>userByAllSelectedTasks', userByAllSelectedTasks);
-
             if (userByAllSelectedTasks) {
-              console.log('userTasksLogged ===========================', userByAllSelectedTasks);
               dispatch(setFilteredData(userByAllSelectedTasks));
-            } else {
-              console.log('Nenhum dado encontrado em localStorage.');
-            }
-          } else {
-            console.log('Nenhum dado encontrado em localStorage.');
+            } 
           }
         }
       } catch (error) {

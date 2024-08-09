@@ -11,7 +11,6 @@ export const useHandleDelete = () => {
   }));
 
   const handleDelete = (id: string) => {
-    //console.log('delete:', id);
 
     if (loggedUser) {
       // Obtém todas as tasks do localStorage

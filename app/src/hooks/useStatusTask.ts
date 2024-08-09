@@ -19,7 +19,6 @@ export function useStatusTask() {
         : item
     );
     localStorage.setItem('allListNotes', JSON.stringify(updatedUserTasks));
-    console.log('updatedUserTasks completed:', updatedUserTasks);
 
     dispatch(setAllTasksk(updatedUserTasks));
     dispatch(setIsStatusPending(true))
@@ -38,7 +37,6 @@ export function useStatusTask() {
           : item
       );
       localStorage.setItem('allListNotes', JSON.stringify(updatedUserTasks));
-      console.log('updatedUserTasks completed:', updatedUserTasks);
   
       dispatch(setAllTasksk(updatedUserTasks));
       dispatch(setIsStatusPending(true))

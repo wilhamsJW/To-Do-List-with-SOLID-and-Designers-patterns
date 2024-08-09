@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react';
-import { Flex, Box, useTheme, useColorMode, useDisclosure } from '@chakra-ui/react';
+import { Flex, Box, useTheme, useColorMode } from '@chakra-ui/react';
 import FavoriteAreaOrganism from './FavoriteAreaOrganism';
 import { useMedia } from 'use-media';
 import { setMediaQuery } from '../../store/slices/registerSlice'
@@ -36,12 +36,6 @@ const HeaderFavoritesOrganism: React.FC = () => {
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFilter(e.target.value);
-  };
-
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
-  const handleOpen = () => {
-    console.log('Card clicked!');
   };
 
   return (

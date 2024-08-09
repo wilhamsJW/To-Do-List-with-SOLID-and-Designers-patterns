@@ -93,7 +93,6 @@ const FavoriteAreaOrganism: React.FC<FavoriteAreaOrganismProps> = ({ filter = ''
     if (loggedUser) {
       const allSelectedTasks = JSON.parse(localStorage.getItem('allListNotes') || '[]');
       const userByAllSelectedTasks = filterByEmail(allSelectedTasks, loggedUser.email)
-      //setListTask(userByAllSelectedTasks);
       dispatch(setFilteredData(userByAllSelectedTasks))
     }
   }, []);
@@ -129,10 +128,6 @@ const FavoriteAreaOrganism: React.FC<FavoriteAreaOrganismProps> = ({ filter = ''
     }
   }, [isAddNewTask, allTasks]);
 
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-  };
-
   return (
     <>
       {!isLoading && <Box overflowY="auto" maxH="100%" w="100%" p={{ base: 2, md: 4 }}>
@@ -140,7 +135,7 @@ const FavoriteAreaOrganism: React.FC<FavoriteAreaOrganismProps> = ({ filter = ''
           <Tbody>
             {/* {filteredData.length > 0 && filteredData.slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage).map((item, index) => ( */}
             {filteredData.map((item, index) => (
-              <Tr key={index}>
+              <Tr bg={item.status === 'completed' ? '#237527' : item.status === 'pending' ? '#8a3227' : '#676e67'} key={index}>
                 <Td>
                   {/* Inputs de edição */}
                   <Flex align="center" direction="row" flex="1" wrap="wrap" justify='flex-start'>
@@ -174,7 +169,6 @@ const FavoriteAreaOrganism: React.FC<FavoriteAreaOrganismProps> = ({ filter = ''
                             lineHeight="29.05px"
                             textAlign="left"
                             textDecoration={item.status === 'completed' ? 'line-through' : 'none'}
-                            bg={item.status === 'completed' ? 'gray.200' : 'transparent'}
                           >
                             {truncateText(item.title, maxNameLength)}
                           </Text>
@@ -184,9 +178,7 @@ const FavoriteAreaOrganism: React.FC<FavoriteAreaOrganismProps> = ({ filter = ''
                             color='#000000'
                             lineHeight="19.36px"
                             textAlign="left"
-                            textDecoration={item.status === '2' ? 'line-through' : 'none'}
-                            bg={item.status === 'completed' ? 'gray.200' : item.status === 'pending' ? 'red' : 'blue'}
-                          >
+                            textDecoration={item.status === '2' ? 'line-through' : 'none'}                          >
                             {truncateText(item.description, maxNameLength)}
                           </Text>
                         </Flex>

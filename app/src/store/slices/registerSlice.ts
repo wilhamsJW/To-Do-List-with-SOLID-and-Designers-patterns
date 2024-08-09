@@ -1,4 +1,3 @@
-import { ArrayInterpolation } from '@emotion/react';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { User } from 'firebase/auth';
 import { DataNote } from '../../interface/index'
