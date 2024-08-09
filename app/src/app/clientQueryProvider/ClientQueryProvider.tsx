@@ -40,19 +40,4 @@ export default ClientQueryProvider;
  * em Next.js) e usado pelo Hydrate para preencher o cache do React Query com dados já carregados.
  */
 
-/**
- * Como tudo funciona?
- * 
- * O componente Hydrate usa o dehydratedState para hidratar o cache do react query ao lado do cliente
- * e isso aconte neste componente: <QueryClientProvider /> HOC que recebe o <Hydrate />, isso já é
- * a pré configuração para manter os dados em cache
- * 
- * Então ao fazer o request com o getServerSideProps() armazenamos os dados obtido do request em cache, 
- * isso acontece: await queryClient.prefetchQuery(['stations', currentPage], () => fetchStationsApi(currentPage));
- * 
- * Por fim ao utilizar o hook useStation que eu personalizei para buscar dados, ele já irá verificar se há dados no cache
- * const { data, error, isLoading } = useStations(currentPage);
- * essa linha acima é a responsável por ir no cache e verificar se há em cache evitando requests desnecessários
- * 
- */
 
