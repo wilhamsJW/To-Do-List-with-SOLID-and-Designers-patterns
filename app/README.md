@@ -8,7 +8,7 @@ Me sinto orgulhoso de conseguir entregar mesmo com pouco tempo e tentando sempre
 
 O projeto foi um desafio para entregar o máximo de funcionalidades em 1 dia, porém tive q sair pq já tinha o detran marcado para resolver o chassi do carro, mas conseguir fazer todas as funcionalidades e um pouco a mais como modo dark e light, edição de tasks, menu drawer mobile e tecnologias de ponta
 
-## Link do Deploy Você pode visualizar a aplicação em produção no seguinte link: [Aplicação To-Do List - BTG](https://to-do-list-with-solid-and-designers-patterns-1xwt.vercel.app/task-btg)
+## Link do Deploy Você pode visualizar a aplicação em produção no seguinte link: [Aplicação To-Do List - BTG](https://to-do-list-with-solid-and-designers-patterns-1xwt.vercel.app/)
 
 ### Visão Geral do Projeto
 
