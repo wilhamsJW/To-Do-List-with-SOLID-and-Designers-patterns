@@ -1,7 +1,12 @@
+/* src/styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Removendo variáveis de cor personalizadas para evitar conflitos com o tema do Chakra UI */
+
+/* Removendo estilização global de cor e fundo que pode conflitar com o tema do Chakra UI */
+/*
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -25,9 +30,28 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+*/
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Adicione esta regra ao seu arquivo globals.css */
+.login-page {
+  background-color: #1E1E21; /* A cor de fundo desejada */
+  background: #2c2c33
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a202c; /* cor de fundo do scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4D4D56; /* cor do "polegar" do scrollbar */
+  border-radius: 1px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6d6d79; /* cor do "polegar" quando o mouse passa por cima */
 }

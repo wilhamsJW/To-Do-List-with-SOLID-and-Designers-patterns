@@ -1,7 +1,13 @@
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Olá Mundo!
-    </main>
-  );
+'use client'
+
+import LoginTemplate from '../components/templates/LoginTemplate'
+import { useEffect } from 'react';
+
+export default function LoginPage() {
+  useEffect(() => {
+    document.body.classList.add('login-page');
+    return () => document.body.classList.remove('login-page');
+  }, []);
+  return <LoginTemplate />
 }
+
